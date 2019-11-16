@@ -28,4 +28,10 @@ public class CharacterClothes : MonoBehaviour
             character.BuildCharacter();
         }
     }
+
+    public void LongHair()
+    {
+        character.ClearSlot("Chest");
+        character.SetSlot("Chest","F")
+    }
 }

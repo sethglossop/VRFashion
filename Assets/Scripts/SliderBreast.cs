@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderHeight : MonoBehaviour
+public class SliderBreast : MonoBehaviour
 {
     private LevelManager levelManager;
     private Slider slider;
@@ -18,6 +18,6 @@ public class SliderHeight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         levelManager.height = slider.value;
+        levelManager.breastSize = slider.value;
     }
 }
