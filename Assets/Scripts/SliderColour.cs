@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UMA;
 
-public class TestChangeCharValues : MonoBehaviour
+public class SliderColour : MonoBehaviour
 {
-    public UMAData umaData;
-
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (umaData == null)
-            return;
-
+        
     }
 }

@@ -16,22 +16,46 @@ public class CharacterClothes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            character.SetSlot("Chest", "MaleHoodie_Recipe");
-            character.BuildCharacter();
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            character.ClearSlot("Chest");
-            character.BuildCharacter();
-        }
+    }
+
+    public void ClearChest()
+    {
+        character.ClearSlot("Chest");
+        character.BuildCharacter();
+    }
+
+    public void ClearLegs()
+    {
+        character.ClearSlot("Legs");
+        character.BuildCharacter();
     }
 
     public void LongHair()
     {
+        character.ClearSlot("Hair");
+        character.SetSlot("Hair", "FemaleLongHair_Recipe");
+        character.BuildCharacter();
+    }
+
+    public void PonyTail()
+    {
+        character.ClearSlot("Hair");
+        character.SetSlot("Hair", "FemalePonyTail_Recipe");
+        character.BuildCharacter();
+    }
+
+    public void SportPants()
+    {
+        character.ClearSlot("Legs");
+        character.SetSlot("Legs", "FemaleSportPants_Recipe");
+        character.BuildCharacter();
+    }
+
+    public void TankTop()
+    {
         character.ClearSlot("Chest");
-        character.SetSlot("Chest","F")
+        character.SetSlot("Chest", "FemaleTankTop_Recipe");
+        character.BuildCharacter();
     }
 }
