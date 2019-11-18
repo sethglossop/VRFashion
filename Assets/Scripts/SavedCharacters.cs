@@ -6,29 +6,22 @@ using UMA.CharacterSystem;
 
 public class SavedCharacters : MonoBehaviour
 {
-    private DynamicCharacterAvatar character;
     public string savedCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
-        character = GetComponent<DynamicCharacterAvatar>();
+        if (GameObject.FindGameObjectsWithTag(gameObject.tag).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void SaveCharacter()
-    {
-        savedCharacter = character.GetCurrentRecipe();
-    }
-
-    public void LoadCharacter()
-    {
-        character.ClearSlots();
-        character.LoadFromRecipeString(savedCharacter);
     }
 }

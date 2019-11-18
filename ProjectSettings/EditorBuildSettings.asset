@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/DressingRoom.unity
+    guid: 32eb255ec45b58e4f84e39ed6a0c40d9
+  - enabled: 1
+    path: Assets/Scenes/FashionShow.unity
+    guid: 37fa0ac9550b1384aa65a290e772d2a8
   m_configObjects: {}
