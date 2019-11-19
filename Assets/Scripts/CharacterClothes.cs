@@ -48,7 +48,7 @@ public class CharacterClothes : MonoBehaviour
     public void SportPants()
     {
         character.ClearSlot("Legs");
-        character.SetSlot("Legs", "FemaleSportPants_Recipe");
+        character.SetSlot("PantsM", "PantsM_Recipe");
         character.BuildCharacter();
     }
 
