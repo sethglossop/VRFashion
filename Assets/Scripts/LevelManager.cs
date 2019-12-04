@@ -21,9 +21,4 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    public void GoToShow()
-    {
-        SceneManager.LoadScene("FashionShow");
-    }
-
 }
