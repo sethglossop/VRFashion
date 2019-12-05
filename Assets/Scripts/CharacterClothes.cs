@@ -7,10 +7,15 @@ using UMA.CharacterSystem;
 public class CharacterClothes : MonoBehaviour
 {
     private DynamicCharacterAvatar character;
+    public SelectModel selectModel;
+    public Dictionary<string, DnaSetter> dna;
+    private string currentSlot;
+    private string currentRecipe;
+
     // Start is called before the first frame update
     void Start()
     {
-        character = GetComponent<DynamicCharacterAvatar>();
+
     }
 
     // Update is called once per frame
@@ -19,43 +24,27 @@ public class CharacterClothes : MonoBehaviour
 
     }
 
-    public void ClearChest()
+    public void SetSlot(string slot)
     {
-        character.ClearSlot("Chest");
+        currentSlot = slot;
+    }
+
+    public void SetRecipe(string recipe)
+    {
+        currentRecipe = recipe;
+        UpdateClothes();
+    }
+
+    public void UpdateClothes()
+    {
+        character = selectModel.character;
+        character.ClearSlot(currentSlot);
+        if (currentRecipe != "Remove")
+        {
+            character.SetSlot(currentSlot, currentRecipe);
+        }
         character.BuildCharacter();
     }
 
-    public void ClearLegs()
-    {
-        character.ClearSlot("Legs");
-        character.BuildCharacter();
-    }
 
-    public void LongHair()
-    {
-        character.ClearSlot("Hair");
-        character.SetSlot("Hair", "FemaleLongHair_Recipe");
-        character.BuildCharacter();
-    }
-
-    public void PonyTail()
-    {
-        character.ClearSlot("Hair");
-        character.SetSlot("Hair", "FemalePonyTail_Recipe");
-        character.BuildCharacter();
-    }
-
-    public void SportPants()
-    {
-        character.ClearSlot("Legs");
-        character.SetSlot("PantsM", "PantsM_Recipe");
-        character.BuildCharacter();
-    }
-
-    public void TankTop()
-    {
-        character.ClearSlot("Chest");
-        character.SetSlot("Chest", "FemaleTankTop_Recipe");
-        character.BuildCharacter();
-    }
 }
