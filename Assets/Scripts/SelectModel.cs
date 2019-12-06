@@ -14,6 +14,7 @@ public class SelectModel : MonoBehaviour
     public Transform base0;
     public Transform base1;
     public Transform base2;
+    public BodyMeasurement bodyMeasurement;
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +52,6 @@ public class SelectModel : MonoBehaviour
             avatar1.transform.position = base2.position + new Vector3(0, 0.1f, 0);
             avatar2.transform.position = base0.position + new Vector3(0, 0.1f, 0);
         }
+        bodyMeasurement.UpdateMeasurements();
     }
 }

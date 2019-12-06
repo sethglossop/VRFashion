@@ -10,15 +10,6 @@ public class BodyMeasurement : MonoBehaviour
     private DynamicCharacterAvatar character;
     public SelectModel selectModel;
     public Dictionary<string, DnaSetter> dna;
-    public Text textHeight;
-    public Text textBreast;
-    public Text textWaist;
-    public Text textHip;
-    private Text measurement;
-    private float intHeight;
-    private float intBreast;
-    private float intWaist;
-    private float intHip;
     public float maxHeight;
     public float minHeight;
     public float maxBreast;
@@ -27,6 +18,15 @@ public class BodyMeasurement : MonoBehaviour
     public float minWaist;
     public float maxHip;
     public float minHip;
+    public Text textHeight;
+    public Text textBreast;
+    public Text textWaist;
+    public Text textHip;
+    private Text measurement;
+    private float height;
+    private float breast;
+    private float waist;
+    private float hip;
     private string stringValue = null;
 
     // Start is called before the first frame update
@@ -93,66 +93,63 @@ public class BodyMeasurement : MonoBehaviour
     public void UpdateMeasurements()
     {
         character = selectModel.character;
-        intHeight = float.Parse(textHeight.text);
-        intBreast = float.Parse(textBreast.text);
-        intWaist = float.Parse(textWaist.text);
-        intHip = float.Parse(textHip.text);
-        if (intHeight > maxHeight)
+        height = float.Parse(textHeight.text);
+        breast = float.Parse(textBreast.text);
+        waist = float.Parse(textWaist.text);
+        hip = float.Parse(textHip.text);
+        if (height > maxHeight)
         {
-            intHeight = 1;
+            height = 1;
         }
-        else if (intHeight < minHeight)
+        else if (height < minHeight)
         {
-            intHeight = 0;
-        }
-        else
-        {
-            intHeight = ((intHeight - minHeight) / (maxHeight - minHeight));
-        }
-        if (intBreast > maxBreast)
-        {
-            intHeight = 1;
-        }
-        else if (intBreast < minBreast)
-        {
-            intBreast = 0;
+            height = 0;
         }
         else
         {
-            intBreast = (intBreast - minBreast) / (maxBreast - minBreast);
+            height = ((height - minHeight) / (maxHeight - minHeight));
         }
-        if (intWaist > maxWaist)
+        if (breast > maxBreast)
         {
-            intWaist = 1;
+            height = 1;
         }
-        else if (intWaist < minWaist)
+        else if (breast < minBreast)
         {
-            intWaist = 0;
+            breast = 0;
         }
         else
         {
-            intWaist = (intWaist - minWaist) / (maxWaist - minWaist);
+            breast = (breast - minBreast) / (maxBreast - minBreast);
         }
-        if (intHip > maxHip)
+        if (waist > maxWaist)
         {
-            intHip = 1;
+            waist = 1;
         }
-        else if (intHip < minHip)
+        else if (waist < minWaist)
         {
-            intHip = 0;
+            waist = 0;
         }
         else
         {
-            intHip = (intHip - minHip) / (maxHip - minHip);
+            waist = (waist - minWaist) / (maxWaist - minWaist);
         }
-        if (dna == null)
+        if (hip > maxHip)
         {
-            dna = character.GetDNA();
+            hip = 1;
         }
-        dna["height"].Set(intHeight);
-        dna["breastSize"].Set(intBreast);
-        dna["waist"].Set(intWaist);
-        dna["lowerWeight"].Set(intHip);
+        else if (hip < minHip)
+        {
+            hip = 0;
+        }
+        else
+        {
+            hip = (hip - minHip) / (maxHip - minHip);
+        }
+        dna = character.GetDNA();
+        dna["height"].Set(height);
+        dna["breastSize"].Set(breast);
+        dna["waist"].Set(waist);
+        dna["lowerWeight"].Set(hip);
         character.BuildCharacter();
     }
 }
