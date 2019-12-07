@@ -69,7 +69,7 @@ public class CharacterWalk : MonoBehaviour
 
     void Walk()
     {
-        if (destination.position.x - transform.position.x > 0.1 || destination.position.z - transform.position.z > 0.1)
+        if (Mathf.Abs(destination.position.x - transform.position.x) > 0.1 || Mathf.Abs(destination.position.z - transform.position.z) > 0.1)
         {
             animator.SetFloat("Speed", 1);
             Vector3 direction = new Vector3(destination.position.x - transform.position.x, 0, destination.position.z - transform.position.z);
