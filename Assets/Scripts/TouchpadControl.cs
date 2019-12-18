@@ -14,6 +14,11 @@ public class TouchpadControl : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject sceneMenu;
     public GameObject walkMenu;
+    public GameObject envCatwalk;
+    public GameObject envForest;
+    public GameObject envCity;
+    public GameObject envOffice;
+    private GameObject envCurrent;
     private string button;
     private string menu = "none";
     public bool pause = false;
@@ -25,6 +30,7 @@ public class TouchpadControl : MonoBehaviour
         touchpadPress = SteamVR_Actions._default.TouchPadPress;
         touchpadPosition = SteamVR_Actions._default.TouchPadPosition;
         rightHand = SteamVR_Input_Sources.RightHand;
+        envCurrent = envCatwalk;
     }
 
     // Update is called once per frame
@@ -120,12 +126,24 @@ public class TouchpadControl : MonoBehaviour
                             menu = "options";
                             break;
                         case "north":
+                            envCurrent.SetActive(false);
+                            envCurrent = envCatwalk;
+                            envCurrent.SetActive(true);
                             break;
                         case "east":
+                            envCurrent.SetActive(false);
+                            envCurrent = envOffice;
+                            envCurrent.SetActive(true);
                             break;
                         case "west":
+                            envCurrent.SetActive(false);
+                            envCurrent = envCity;
+                            envCurrent.SetActive(true);
                             break;
                         case "south":
+                            envCurrent.SetActive(false);
+                            envCurrent = envForest;
+                            envCurrent.SetActive(true);
                             break;
                     }
                     break;
