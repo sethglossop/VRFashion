@@ -15,6 +15,7 @@ public class CharacterWalk : MonoBehaviour
     private Animator animator;
     public int stage = 0;
     public float waittime = 0;
+    public TouchpadControl controls;
 
 
     // Start is called before the first frame update
@@ -31,47 +32,55 @@ public class CharacterWalk : MonoBehaviour
             animator = GetComponent<Animator>();
         }
 
-        switch (stage)
+        if (!controls.pause)
         {
-            case 0:
-                Idle(character * 4);
-                break;
-            case 1:
-                destination = destination1;
-                Walk();
-                break;
-            case 2:
-                destination = destination2;
-                Walk();
-                break;
-            case 3:
-                Idle(3);
-                break;
-            case 4:
-                destination = destination3;
-                Walk();
-                break;
-            case 5:
-                Idle(3);
-                break;
-            case 6:
-                destination = destination4;
-                Walk();
-                break;
-            case 7:
-                destination = destination5;
-                Walk();
-                break;
-            default:
-                break;
+            switch (stage)
+            {
+                case 0:
+                    Idle(character * 4);
+                    break;
+                case 1:
+                    destination = destination1;
+                    Walk();
+                    break;
+                case 2:
+                    destination = destination2;
+                    Walk();
+                    break;
+                case 3:
+                    Idle(3);
+                    break;
+                case 4:
+                    destination = destination3;
+                    Walk();
+                    break;
+                case 5:
+                    Idle(3);
+                    break;
+                case 6:
+                    destination = destination4;
+                    Walk();
+                    break;
+                case 7:
+                    destination = destination5;
+                    Walk();
+                    break;
+                default:
+                    break;
+            }
         }
+        else
+        {
+            animator.SetInteger("Style", 0);
+        }
+
     }
 
     void Walk()
     {
         if (Mathf.Abs(destination.position.x - transform.position.x) > 0.1 || Mathf.Abs(destination.position.z - transform.position.z) > 0.1)
         {
-            animator.SetFloat("Speed", 1);
+            animator.SetInteger("Style", controls.style);
             Vector3 direction = new Vector3(destination.position.x - transform.position.x, 0, destination.position.z - transform.position.z);
             direction = Vector3.Normalize(direction);
             transform.forward = direction;
@@ -87,7 +96,7 @@ public class CharacterWalk : MonoBehaviour
     {
         if (waittime < time)
         {
-            animator.SetFloat("Speed", 0);
+            animator.SetInteger("Style", 0);
             waittime += Time.deltaTime;
         }
         else

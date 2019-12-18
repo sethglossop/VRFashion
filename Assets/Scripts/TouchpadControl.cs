@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 
 public class TouchpadControl : MonoBehaviour
@@ -10,7 +11,13 @@ public class TouchpadControl : MonoBehaviour
     private SteamVR_Action_Vector2 touchpadPosition;
     private SteamVR_Input_Sources rightHand;
     public GameObject controller;
-    private int state = 0;
+    public GameObject optionsMenu;
+    public GameObject sceneMenu;
+    public GameObject walkMenu;
+    private string button;
+    private string menu = "none";
+    public bool pause = false;
+    public int style = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -30,26 +37,99 @@ public class TouchpadControl : MonoBehaviour
             float y = touchpadValue.y;
             if (Mathf.Abs(x) < 0.5 && Mathf.Abs(y) < 0.5)
             {
-                print("center");
+                button = "centre";
             }
             else if (y > x && y > -x)
             {
-                print("north");
-            }
-            else if (y > x && y < -x)
-            {
-                print("west");
+                button = "north";
             }
             else if (y < x && y > -x)
             {
-                print("east");
+                button = "east";
+            }
+            else if (y > x && y < -x)
+            {
+                button = "west";
             }
             else if (y < x && y < -x)
             {
-                print("south");
+                button = "south";
+            }
+
+            switch(menu)
+            {
+                case "none":
+                    controller.SetActive(true);
+                    optionsMenu.SetActive(true);
+                    menu = "options";
+                    break;
+                case "options":
+                    switch(button)
+                    {
+                        case "centre":
+                            optionsMenu.SetActive(false);
+                            controller.SetActive(false);
+                            menu = "none";
+                            break;
+                        case "north":
+                            pause = !pause;
+                            break;
+                        case "east":
+                            optionsMenu.SetActive(false);
+                            walkMenu.SetActive(true);
+                            menu = "walk";
+                            break;
+                        case "west":
+                            optionsMenu.SetActive(false);
+                            sceneMenu.SetActive(true);
+                            menu = "scene";
+                            break;
+                        case "south":
+                            SceneManager.LoadScene("DressingRoom");
+                            break;
+                    }
+                    break;
+                case "walk":
+                    switch (button)
+                    {
+                        case "centre":
+                            walkMenu.SetActive(false);
+                            optionsMenu.SetActive(true);
+                            menu = "options";
+                            break;
+                        case "north":
+                            style = 1;
+                            break;
+                        case "east":
+                            style = 2;
+                            break;
+                        case "west":
+                            style = 3;
+                            break;
+                        case "south":
+                            style = 4;
+                            break;
+                    }
+                    break;
+                case "scene":
+                    switch (button)
+                    {
+                        case "centre":
+                            sceneMenu.SetActive(false);
+                            optionsMenu.SetActive(true);
+                            menu = "options";
+                            break;
+                        case "north":
+                            break;
+                        case "east":
+                            break;
+                        case "west":
+                            break;
+                        case "south":
+                            break;
+                    }
+                    break;
             }
         }
-
-        
     }
 }
