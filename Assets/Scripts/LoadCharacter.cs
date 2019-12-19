@@ -26,9 +26,12 @@ public class LoadCharacter : MonoBehaviour
             characterRecipe = SavedCharacters.savedCharacter2;
         }
 
-        avatar = GetComponent<DynamicCharacterAvatar>();
-        avatar.ClearSlots();
-        avatar.LoadFromRecipeString(characterRecipe);
+        if (characterRecipe != null)
+        {
+            avatar = GetComponent<DynamicCharacterAvatar>();
+            avatar.ClearSlots();
+            avatar.LoadFromRecipeString(characterRecipe);
+        }
     }
 
     // Update is called once per frame
