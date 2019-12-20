@@ -16,12 +16,14 @@ public class CharacterWalk : MonoBehaviour
     public int stage = 0;
     public float waittime = 0;
     public TouchpadControl controls;
+    private Vector3 startPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
         destination = destination1;
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -64,6 +66,10 @@ public class CharacterWalk : MonoBehaviour
                 case 7:
                     destination = destination5;
                     Walk();
+                    break;
+                case 8:
+                    transform.position = startPos;
+                    stage = 1;
                     break;
                 default:
                     break;

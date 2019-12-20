@@ -11,6 +11,7 @@ public class TouchpadControl : MonoBehaviour
     private SteamVR_Action_Vector2 touchpadPosition;
     private SteamVR_Input_Sources rightHand;
     public GameObject controller;
+    public Transform pointer;
     public GameObject optionsMenu;
     public GameObject sceneMenu;
     public GameObject walkMenu;
@@ -36,11 +37,13 @@ public class TouchpadControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 touchpadValue = touchpadPosition.GetAxis(rightHand);
+        float x = touchpadValue.x;
+        float y = touchpadValue.y;
+        pointer.transform.localPosition = new Vector3(x * 0.4f, 1, y * 0.4f);
+
         if (touchpadPress.GetStateDown(rightHand))
         {
-            Vector2 touchpadValue = touchpadPosition.GetAxis(rightHand);
-            float x = touchpadValue.x;
-            float y = touchpadValue.y;
             if (Mathf.Abs(x) < 0.5 && Mathf.Abs(y) < 0.5)
             {
                 button = "centre";
@@ -62,7 +65,7 @@ public class TouchpadControl : MonoBehaviour
                 button = "south";
             }
 
-            switch(menu)
+            switch (menu)
             {
                 case "none":
                     controller.SetActive(true);
@@ -70,7 +73,7 @@ public class TouchpadControl : MonoBehaviour
                     menu = "options";
                     break;
                 case "options":
-                    switch(button)
+                    switch (button)
                     {
                         case "centre":
                             optionsMenu.SetActive(false);
