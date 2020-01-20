@@ -1,14 +1,8 @@
-Start with choose face -> take to skin/hair
-Add button to move to Change Face screen
-
-Each item: add Heart icon
+ Each item: add Heart icon
 -> Add Favourite will change colour of Heart from plain to yellow
 -> Show Favourites will remove items with plain Hearts [SUBLIST 1]
 
 Change icons/button styles
-
-Add Cart (on brand panel)
--> Add to Cart on each item adds item to cart screen [SUBLIST 2]
 
 Replace Beach scene with Suburbs (using new assets)
 
