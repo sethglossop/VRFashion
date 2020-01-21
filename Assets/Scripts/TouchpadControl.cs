@@ -18,7 +18,7 @@ public class TouchpadControl : MonoBehaviour
     public GameObject envCatwalk;
     public GameObject envForest;
     public GameObject envCity;
-    public GameObject envBeach;
+    public GameObject envSuburb;
     private GameObject envCurrent;
     private string button;
     private string menu = "none";
@@ -135,7 +135,7 @@ public class TouchpadControl : MonoBehaviour
                             break;
                         case "east":
                             envCurrent.SetActive(false);
-                            envCurrent = envBeach;
+                            envCurrent = envSuburb;
                             envCurrent.SetActive(true);
                             break;
                         case "west":
