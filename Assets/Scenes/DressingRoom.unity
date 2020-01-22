@@ -721,7 +721,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemaleShirt4
+          m_StringArgument: LongTop_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 68408116}
@@ -2310,7 +2310,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chest
+          m_StringArgument: Body
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1663099985}
@@ -2321,7 +2321,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemaleTankTop_Recipe
+          m_StringArgument: Dress_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 376061422}
@@ -2918,7 +2918,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemaleSportPants_Recipe
+          m_StringArgument: Pants_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 477273248}
@@ -3326,7 +3326,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemalePants1
+          m_StringArgument: Capris_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 510783737}
@@ -4092,7 +4092,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemaleShirt2
+          m_StringArgument: MidTop_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 539161010}
@@ -4690,7 +4690,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemaleShirt3
+          m_StringArgument: Turtleneck_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 578912288}
@@ -8389,7 +8389,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FemalePants2
+          m_StringArgument: Shorts_F_Recipe
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1040581230}
