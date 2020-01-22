@@ -38,7 +38,17 @@ public class CharacterClothes : MonoBehaviour
     public void UpdateClothes()
     {
         character = selectModel.character;
-        character.ClearSlot(currentSlot);
+        if (currentSlot == "Body")
+        {
+            character.ClearSlot("Chest");
+            character.ClearSlot("Legs");
+        }
+        else
+        {
+            character.ClearSlot("Body");
+            character.ClearSlot(currentSlot);
+        }
+
         if (currentRecipe != "Remove")
         {
             character.SetSlot(currentSlot, currentRecipe);
