@@ -9,17 +9,10 @@ public class LaserPointer : MonoBehaviour
 {
     private SteamVR_LaserPointer laserPointer;
 
-    // Start is called before the first frame update
     void Start()
     {
         laserPointer = GetComponent<SteamVR_LaserPointer>();
         laserPointer.PointerClick += PointerClick;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void PointerClick(object sender, PointerEventArgs e)

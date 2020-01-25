@@ -12,18 +12,6 @@ public class CharacterClothes : MonoBehaviour
     private string currentSlot;
     private string currentRecipe;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetSlot(string slot)
     {
         currentSlot = slot;
@@ -55,5 +43,4 @@ public class CharacterClothes : MonoBehaviour
         }
         character.BuildCharacter();
     }
-
 }

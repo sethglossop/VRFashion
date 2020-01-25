@@ -24,19 +24,6 @@ public class PopUpPanel : MonoBehaviour
     public Text item3Price;
     public Image item3Picture;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ShoppingCart()
     {
         itemPanel.SetActive(false);

@@ -9,17 +9,9 @@ public class BuildAvatar : MonoBehaviour
     private DynamicCharacterAvatar character;
     private Dictionary<string, DnaSetter> dna;
 
-    // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<DynamicCharacterAvatar>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdateAvatar(float height, float breast, float waist, float hip)

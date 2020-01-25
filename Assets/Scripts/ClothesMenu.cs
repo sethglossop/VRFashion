@@ -15,16 +15,9 @@ public class ClothesMenu : MonoBehaviour
     private bool underwearOpen;
     private Vector2 move;
 
-    // Start is called before the first frame update
     void Start()
     {
         move = new Vector2(0, -80);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Menu(string category)

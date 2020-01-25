@@ -7,17 +7,6 @@ public class BodyMode : MonoBehaviour
     public GameObject measurements;
     public GameObject skinhair;
     public GameObject face;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SkinHair()
     {

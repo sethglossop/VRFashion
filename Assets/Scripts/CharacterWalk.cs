@@ -18,15 +18,12 @@ public class CharacterWalk : MonoBehaviour
     public TouchpadControl controls;
     private Vector3 startPos;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         destination = destination1;
         startPos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (animator == null)

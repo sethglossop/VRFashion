@@ -9,16 +9,9 @@ public class ClothesButton : MonoBehaviour
     public string itemPrice;
     public Sprite itemPicture;
 
-    // Start is called before the first frame update
     void Start()
     {
         itemPicture = GetComponent<Image>().sprite;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void PopUpItem(PopUpPanel popUpPanel)

@@ -10,7 +10,6 @@ public class LoadCharacter : MonoBehaviour
     public int characterNumber;
     private string characterRecipe;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (characterNumber == 0)
@@ -33,11 +32,4 @@ public class LoadCharacter : MonoBehaviour
             avatar.LoadFromRecipeString(characterRecipe);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

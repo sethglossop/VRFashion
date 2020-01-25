@@ -25,7 +25,6 @@ public class TouchpadControl : MonoBehaviour
     public bool pause = false;
     public int style = 4;
 
-    // Start is called before the first frame update
     void Start()
     {
         touchpadPress = SteamVR_Actions._default.TouchPadPress;
@@ -34,7 +33,6 @@ public class TouchpadControl : MonoBehaviour
         envCurrent = envCatwalk;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 touchpadValue = touchpadPosition.GetAxis(rightHand);

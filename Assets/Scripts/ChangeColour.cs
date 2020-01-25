@@ -12,18 +12,6 @@ public class ChangeColour : MonoBehaviour
     public Dictionary<string, DnaSetter> dna;
     private Color colour;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateColour(string slot)
     {
         character = selectModel.character;

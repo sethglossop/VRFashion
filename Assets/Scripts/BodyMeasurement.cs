@@ -29,17 +29,6 @@ public class BodyMeasurement : MonoBehaviour
     private float hip;
     private string stringValue = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SelectField(string field)
     {
         if (field == "height")
@@ -111,7 +100,7 @@ public class BodyMeasurement : MonoBehaviour
         }
         if (breast > maxBreast)
         {
-            height = 1;
+            breast = 1;
         }
         else if (breast < minBreast)
         {

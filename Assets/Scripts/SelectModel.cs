@@ -16,16 +16,9 @@ public class SelectModel : MonoBehaviour
     public Transform base2;
     public BodyMeasurement bodyMeasurement;
 
-    // Start is called before the first frame update
     void Start()
     {
         character = avatar0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ChangeModel ()

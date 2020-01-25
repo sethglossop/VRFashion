@@ -11,17 +11,6 @@ public class GoToShow : MonoBehaviour
     public DynamicCharacterAvatar avatar1;
     public DynamicCharacterAvatar avatar2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SaveAndGo()
     {
         SavedCharacters.savedCharacter0 = avatar0.GetCurrentRecipe();
